@@ -36,14 +36,14 @@ def main_menu():
     print("2. Request most popular stop locations")
     print("3. What is the average distance traveled")
     print("4. How many riders include bike sharing regularly?")
-    #print("5. Analyze ridership patterns (e.g. PassType, Duration)")
+    print("5. Analyze seasonal trends (e.g. PassType, Duration)")
     print("6. Which locations require bike transport to maintain bike levels?")
-    #print("7. What is the breakdown of Trip Route Category-Passholder type combinations?")
+    print("7. What is the breakdown of Trip Route Category-Passholder type combinations?")
     
     #call the input dialog box
     print('')
     message = "Which function/data do you desire?" #prompt 
-    x = take_numerical_input(6, message, 0)
+    x = take_numerical_input(7, message, 0)
     print('')
 
     #Cases: decide on the respective function based on integer input
@@ -53,9 +53,9 @@ def main_menu():
     command = most_popular_stations("Stop") if x == 2 else command
     command = average_distance_traveled() if x == 3 else command
     command = regular_commuters() if x == 4 else command
-    command = exit if x == 5 else command
+    command = seasonal_trends() if x == 5 else command
     command = bike_transport() if x == 6 else command
-    command = exit if x == 7 else command
+    command = trip_passholder_combos() if x == 7 else command
     
     if command == exit:
         print('Exiting. Have a nice day!')
@@ -77,9 +77,9 @@ def most_popular_stations(start_stop):
         loc_id = row[column]
         
         if loc_id not in popular_loc :   #if the data is not already in our dictionary of most popular IDs
-            popular_loc[loc_id] = 1         #initialize it in the dictionary with the occurance as "1"
+            popular_loc[loc_id] = 1         #initialize it in the dictionary with the occurrence as "1"
         else:                           #else:
-            popular_loc[loc_id] += 1        #increment its occurance by 1
+            popular_loc[loc_id] += 1        #increment its occurrence by 1
 
     #sort the popular ID dictionary into a list, organized in reverse order by the most visited stations
     popular_loc = sorted(popular_loc.items(), key=lambda kv: kv[1], reverse=True)
@@ -93,7 +93,7 @@ def most_popular_stations(start_stop):
     #write the desired quantity of data to "output_filename"
     output_filename = 'Popular ' + start_stop + ' Locations.csv' #default filename
     output_filename = choose_filename(output_filename)           #allows user to specify unique filename
-    columnheaders = ["Popular " + start_stop + " Locations", "Occurances"]
+    columnheaders = ["Popular " + start_stop + " Locations", "Occurrences"]
     data_list = popular_loc
     return_string = output_filename + " now has the " + str(desired_quantity) + " most popular " + start_stop.lower() + " locations."
     output_data(output_filename, columnheaders, data_list, return_string, desired_quantity)
@@ -157,7 +157,7 @@ def average_distance_traveled():
 def regular_commuters():
     column = passType
 
-    #keep track of occurances in [[Monthly Pass #, Staff Annual Pass #]]
+    #keep track of occurrences in [[Monthly Pass #, Staff Annual Pass #]]
     regular_commuters = [["Quantity", 0, 0, 0]
                         ,["Total Percent of ALL Rides:", 0, 0, 0]]
     total_commutes = 0
@@ -168,9 +168,9 @@ def regular_commuters():
         total_commutes += 1 #total of all commutes
 
         if pass_value == "Monthly Pass":
-            regular_commuters[0][1] += 1    #increment Monthly Pass occurance by 1
+            regular_commuters[0][1] += 1    #increment Monthly Pass occurrence by 1
         if pass_value == "Staff Annual":
-            regular_commuters[0][2] += 1    #increment Annual Pass occurance by 1
+            regular_commuters[0][2] += 1    #increment Annual Pass occurrence by 1
     
     #Calculate the total number of regular commuters
     regular_commuters[0][3] = regular_commuters[0][1] + regular_commuters[0][2]
@@ -188,6 +188,141 @@ def regular_commuters():
     return_string = output_filename + " now stores data on regular commuters."
     desired_quantity = len(data_list)
     output_data(output_filename, columnheaders, data_list, return_string, desired_quantity)
+
+#5:How does ridership change with seasons? Types of passes used, trip duration, etc
+#Meterological Seasons: Spring: March-May (3-5), Summer: June-August (6-8), Fall: September-November (9-11), Winter: December-February (12,1,2)
+def seasonal_trends():
+    spring = [] #hold data for our given season
+    summer  = []
+    fall = []
+    winter = []
+
+    for row in data: #for each row in the dataset
+        #extract date and put it into list if it matches our desired date
+        datetime_start = datetime.strptime(row[startTime], '%Y-%m-%dT%H:%M:%S') #datetime object for drop-off 
+        datetime_end = datetime.strptime(row[endTime], '%Y-%m-%dT%H:%M:%S') #datetime object for drop-off 
+        pass_type = row[passType]
+        month = datetime_start.month
+
+        #if the desired month is the in the range of our season, append the data row to this season's data
+        #                    0            1               2           3               4               5         6 (START TIME) 7 (STOP TIME)      8           9 
+        station_info = [row[sStatID], row[sStatLat], row[sStatLon], row[eStatID], row[eStatLat], row[eStatLon], datetime_start, datetime_end, pass_type, row[tripCat]]
+        if 3 <= month <= 5:     #Spring
+            spring.append(station_info)   #add the data to the season's list
+        elif 6 <= month <= 8:   #Summer
+            summer.append(station_info)   #add the data to the season's list
+        elif 9 <= month <= 11:  #Fall
+            fall.append(station_info)   #add the data to the season's list 
+        else:                   #Winter
+            winter.append(station_info)   #add the data to the season's list
+    
+    
+    #At this point, we have our data that fits our date in four unorganized lists:
+    #Spring, Summer, Fall, and Winter
+    annual_seasons = [spring, summer, fall, winter]
+    i = 0
+    final_ans = [["Spring"],["Summer"],["Fall"],["Winter"]]
+    for season in annual_seasons:
+        
+
+    #average distance
+        R = 6373.0 # approximate radius of earth in km
+        total_distance = 0 #sum of all valid distances
+        num_rows = 0 #used for dividing sum of distance for average distance. Excludes round_trip_counter and blank_counter
+        round_trip_counter = 0 #count number of round trips (because distance for a round trip is 0km)
+        blank_counter = 0 #count number of empty-rows for start or stop location. These shouldn't be included
+
+        for trip in season: #for each row in the dataset
+            if trip[9] == "One Way": #only include one-ways, as round-trips have a distance traveled of 0
+                if (trip[1] and trip[2] and trip[4] and trip[5]) != "": #if the start or stop lon/lat's contain data, calculate
+                    num_rows += 1
+                    #extract the row's lat's and lon's
+                    lat1 = radians(float(trip[1]))
+                    lon1 = radians(float(trip[2]))
+                    lat2 = radians(float(trip[4]))
+                    lon2 = radians(float(trip[5]))
+
+                    #Compute deltas
+                    delta_lon = lon2 - lon1
+                    delta_lat = lat2 - lat1
+
+                    #Calculate distance
+                    a = sin(delta_lat / 2)**2 + cos(lat1) * cos(lat2) * sin(delta_lon / 2)**2
+                    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+                    distance = R*c
+                    total_distance += distance
+
+                else: #if the start or stop lon/lat's don't contain data, increment blank_counter
+                    blank_counter += 1
+
+            else: #if the trip is a round trip, increment round_trip_counter
+                round_trip_counter += 1
+
+        try:
+            ans = total_distance/num_rows
+            return_message1 = str(round(ans, 2)) + " km"
+        except ZeroDivisionError: #avoid dividing by zero if all trips were round-trip
+            return_message1 = "Only Round Trips/No Data"
+        final_ans[i].append(return_message1)
+
+    #avg duration
+        total_time = 0 #sum of all valid distances
+        num_rows = 0 #used for dividing sum of distance for average distance. Excludes round_trip_counter and blank_counter
+
+        for trip in season: #for each row in the dataset
+            start_time = trip[6]
+            end_time = trip[7]
+            if (start_time and end_time) != "": #if the start or stop lon/lat's contain data, calculate
+                num_rows += 1
+                #calculate delta in time between docking and undocking (in minutes)
+                minute_delta = (end_time - start_time).seconds / 60
+
+                total_time += minute_delta
+
+            else: #if the start or stop lon/lat's don't contain data, increment blank_counter
+                blank_counter += 1
+
+        try:
+            ans = total_time/num_rows
+            return_message1 = str(round(ans, 1)) + " minutes"
+        except ZeroDivisionError: #avoid dividing by zero if no trips
+            return_message1 = "No Data"
+        final_ans[i].append(return_message1)
+        
+        pass_type_sums = [0,0,0,0,0]
+    #check # of passes of each type used.
+        for trip in season: #for each row in the dataset
+            pass_value = trip[8]
+            
+
+            if pass_value == "Staff Annual":
+                pass_type_sums[4] += 1 #total of all commutes
+                pass_type_sums[0] += 1    #increment Monthly Pass occurrence by 1
+            if pass_value == "Monthly Pass":
+                pass_type_sums[4] += 1 #total of all commutes
+                pass_type_sums[1] += 1    #increment Annual Pass occurrence by 1
+            if pass_value == "Flex Pass":
+                pass_type_sums[4] += 1 #total of all commutes
+                pass_type_sums[2] += 1    #increment Annual Pass occurrence by 1
+            if pass_value == "Walk-up":
+                pass_type_sums[4] += 1 #total of all commutes
+                pass_type_sums[3] += 1    #increment Annual Pass occurrence by 1
+
+        final_ans[i].append(pass_type_sums)
+        i += 1
+    
+    data_list = []
+    for season in final_ans:
+        data_list.append([season[0],season[1],season[2],season[3][4],season[3][0],season[3][1],season[3][2],season[3][3]])
+    #write the desired quantity of data to "output_filename"
+    output_filename = 'Seasonal Trends.csv' #default filename
+    output_filename = choose_filename(output_filename)           #allows user to specify unique filename
+    columnheaders = ["Season", "Average Distance Traveled", "Average Commute Time", "Total Number of Rides", "Total Annual Pass Rides", "Total Month Pass Rides", "Total Flex Pass Rides", "Total Walk-Up Rides"]
+    data_list = data_list
+    return_string = output_filename + " now stores data on seasonal trends."
+    desired_quantity = len(data_list)
+    output_data(output_filename, columnheaders, data_list, return_string, desired_quantity)
+
 
 #6: Which locations require bike transport to maintain bike levels?
 def bike_transport():
@@ -217,10 +352,10 @@ def bike_transport():
         #append the data in the format ["StationID", timestamp of drop-off/pickup]
         if datetime_arrival.date() == desired_date.date():
             station_info = [row[eStatID], datetime_arrival]
-            arrivals.append(station_info)   #increment its occurance by 1
+            arrivals.append(station_info)   #increment its occurrence by 1
         if datetime_depart.date() == desired_date.date():
             station_info = [row[sStatID], datetime_depart]
-            departures.append(station_info)   #increment its occurance by 1
+            departures.append(station_info)   #increment its occurrence by 1
 
         #Since our dataset is quite large, and since our data is in chronological order in rows
         #if we reach a date where it is LATER than our desired date, we can break and end
@@ -283,7 +418,17 @@ def bike_transport():
                 remove_bikes_x_axis[hour] = station[stationID]
 
     #calls the graphing function to graph the hourly data about the station that needs more bikes and the station that needs bikes removed
-    graph_two_stations(add_bikes_x_axis, remove_bikes_x_axis, add_bikes[0], remove_bikes[0])
+    plot_title = 'Station ' + add_bikes[0] + ": Needs Bikes Added"
+    graph_station(add_bikes_x_axis, add_bikes[0], plot_title)
+
+    plot_title = 'Station ' + remove_bikes[0] + ": Needs Bikes Removed"
+    graph_station(remove_bikes_x_axis, remove_bikes[0], plot_title)
+
+    main_menu()
+
+#7: What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular?
+def trip_passholder_combos():
+    exit
 
 #!!!!################## Secondary Input/Parsing Functions #######################!!!!#
 
@@ -380,43 +525,34 @@ def open_file(output_filename):
     print('')
     main_menu()
 
-def graph_two_stations(x_axis1, x_axis2, add_station, remove_station):
-    # heights of bar graphs (Graph1 and Graph2 denoted by 1 and 2 in variables)
-    red_height1 = []
-    green_height1 = []
-    red_height2 = []
-    green_height2 = []
+def graph_station(x_axis, station, plot_title):
+    # heights of bar graphs
+    red_height = []
+    green_height = []
+
 
     #Populate red_height for bikes lost, populate green_height for bikes gained
-    #Do this for both graphs 1 and 2 simultaneously, but keep the data separate
     i = 0
     while i < 24:
-        x1 = x_axis1.get(i, 0)
-        x2 = x_axis2.get(i, 0)
+        x1 = x_axis.get(i, 0)
         if x1 < 0:
-            red_height1.append(x1)
-            green_height1.append(0)
+            red_height.append(x1)
+            green_height.append(0)
         else:
-            red_height1.append(0)
-            green_height1.append(x1) 
-        if x2 < 0:
-            red_height2.append(x2)
-            green_height2.append(0)
-        else:
-            red_height2.append(0)
-            green_height2.append(x2) 
+            red_height.append(0)
+            green_height.append(x1) 
         i += 1
     
     #If the net change for every single bicycle station for every single hour
     #of a desired day is ZERO, then there is no data for that day.
     #The user should be informed of this anomaly, and returned to the main menu
-    all_heights = [red_height1, red_height2, green_height1, green_height2] #all of our Y-Axis values for Graphs 1 and 2
+    all_heights = [red_height, green_height] #all of our Y-Axis values for the graph
     data = False
-    for height_list in all_heights: #for each of the 4 lists
+    for height_list in all_heights: #for each of the 2 lists
         for entry in height_list: #for each Y-value
             if entry != 0: #if it's not zero, then we have valid data
                 data = True
-    if data == False: #If no data was found, notify the user and return to the main menu
+    if data == False: #If no data was found for this day, notify the user and return to the main menu
         print('')
         print("No data is available for that date! Returning you to the main menu.")
         main_menu() #return to the main menu
@@ -428,24 +564,13 @@ def graph_two_stations(x_axis1, x_axis2, add_station, remove_station):
     tick_label = ['12AM','','','3AM','','','6AM','','','9AM','','','12PM',
                   '','','3PM','','','6PM','','','9PM','','11PM']
 
-    #Plot Graph 1
-    plt.bar(left, green_height1, tick_label = tick_label, width = 0.4, color = 'green') 
-    plt.bar(left, red_height1, tick_label = tick_label, width = 0.4, color = 'red')
-    #Give Graph 1 some characteristics
+    #Plot Graph
+    plt.bar(left, green_height, tick_label = tick_label, width = 0.4, color = 'green') 
+    plt.bar(left, red_height, tick_label = tick_label, width = 0.4, color = 'red')
+    #Give Graph some characteristics
     plt.xlabel('Time of Day (Hours)') 
     plt.ylabel('Net Change in Bikes (Negative -> Loss, Positive -> Gain') #Label y-axis 
-    plt.title('Station ' + add_station + ": Needs Bikes Added") # plot title 
-    plt.show() #Show Graph1
-
-    #Plot Graph 2
-    plt.bar(left, green_height2, tick_label = tick_label, width = 0.4, color = 'green') 
-    plt.bar(left, red_height2, tick_label = tick_label, width = 0.4, color = 'red') 
-    #Give Graph 2 some characteristics
-    plt.xlabel('Time of Day (Hours)') 
-    plt.ylabel('Net Change in Bikes (Negative -> Loss, Positive -> Gain') #Label y-axis 
-    plt.title('Station ' + add_station + ": Needs Bikes Removed") # plot title 
-    plt.show() #Show Graph1
-
-    main_menu() #return to the main menu after graph viewing is done
+    plt.title(plot_title) # plot title 
+    plt.show() #Show Graph
 
 main_menu()
