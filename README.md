@@ -58,12 +58,14 @@ Throughout my script, I have implemented protections against edge-case scenarios
 <img src="Github Pages/Main Menu/3.jpg" class="img-responsive" alt="">
 
 ***
-### Function 0: Exit
+### Function 0
+**Exit**
 <img src="Github Pages/Function 0/1.jpg" class="img-responsive" alt="">
 _The least exciting function to implement._ This function takes no input, simply closing the program.
 
 ***
-### Function 1: Most popular start stations
+### Function 1
+**Most popular start stations**
 <img src="Github Pages/Function 1/1.jpg" class="img-responsive" alt="">
 Running function '1' will cause a prompt to appear, asking for how many of the most popular stations the user desires to have returned based on the number of unique stations in the dataset.
 - After entering a desired quantity, the program then asks for a filename to export the analyzed data to.
@@ -89,7 +91,8 @@ Finally, after the file has or has not been opened, the program automatically re
 **It is worth mentioning at this point in the introduction that the guards and functionality of this function are primary to the program. These functionaltiies will, from now onward, be skimmed over for the following functions. All further sections will share similar guards such as write protection, input-guards for strings, dates, and integers when prompted, and the ability to open files after the data export is complete.**
 
 ***
-### Function 2: Most popular stop stations
+### Function 2
+**Most popular stop stations**
 <img src="Github Pages/Function 2/1.jpg" class="img-responsive" alt="">
 
 After running function 2, similar to most popular start locations, the program asks for the desired number of most popular stop locations, before saving them to a datasheet for viewing. Below is a copy of what is returned after requesting 10 most popular stop locations.
@@ -97,7 +100,8 @@ After running function 2, similar to most popular start locations, the program a
 <img src="Github Pages/Function 2/2.jpg" class="img-responsive" alt="" width="250">
 
 ***
-### Function 3: Average distance traveled
+### Function 3
+**Average distance traveled**
 <img src="Github Pages/Function 3/1.jpg" class="img-responsive" alt="">
 
 After running function 3, the code asks which file the data should be written to, and stores a CSV file with the following data format depicted below. Average distance was calculated by excluding round trips and entries where the Lat and Long coordinates were left blank. Mathematically, the function computes the Euclidean distance between the one-way trips and averages these routes. This only resulted in 9% of the data set being ignored for average distance calculations, as I did not wish to assume bikers were biking the whole duration of a ride at a given speed and overestimate distance.
@@ -105,7 +109,8 @@ After running function 3, the code asks which file the data should be written to
 <img src="Github Pages/Function 3/2.jpg" class="img-responsive" alt="" width="550">
 
 ***
-### Function 4: Regular bike commuters
+### Function 4
+**Regular bike commuters**
 <img src="Github Pages/Function 4/1.jpg" class="img-responsive" alt="">
 
 After running function 4, the code asks which file the data should be written to, and stores an CSV file with the following data format depicted below. The code assumes that only monthly and annual pass rides are "regular" commutes, due to the provided defintions on the bikeshare data website for walk-up and flex-pass. This CSV file stores the raw quantity of monthly pass rides and annual pass rides, as well as the sum of ALL rides. It then uses this data to compute percentages to accompany the raw numerical data.
@@ -113,7 +118,8 @@ After running function 4, the code asks which file the data should be written to
 <img src="Github Pages/Function 4/2.jpg" class="img-responsive" alt="" width="600">
 
 ***
-### Function 5: Seasonal ridership trends
+### Function 5
+**Seasonal ridership trends**
 <img src="Github Pages/Function 5/1.jpg" class="img-responsive" alt="">
 
 After running function 5, the entries of the data set are split into 4 meterological seasons:
@@ -133,7 +139,8 @@ The data is then arranged and output in the following format based on season:
 <img src="Github Pages/Function 5/2.jpg" class="img-responsive" alt="">
 
 ***
-### Function 6: Net change in bikes
+### Function 6
+**Net change in bikes**
 <img src="Github Pages/Function 6/1.jpg" class="img-responsive" alt="">
 
 After running function 6, the user is prompted to enter a date, including day, month, and year. Similarly, this function has guards on both month and day entries, and if the date selected has no data entries, it informs the user as shown above, with a message stating there is not data for the avaialable date. It then returns to the main menu.
