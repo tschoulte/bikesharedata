@@ -15,7 +15,9 @@ Below is the documentation for my Python-coded bikeshare data analyzing script i
 <img src="Github Pages/Graphs/3.jpg" width="500">
 
 ```Pictured above is a graph showing pass usage based on the season. I selected this graph because of two factors:```
+
 `1. I realized that the Staff Annual pass did not have any riders in Spring and Summer, so I wonder if this pass was brought to fruition in the Fall of 2016.`
+
 `2. I was surprised that the number of monthly pass rides is significantly lower in the Spring than the Winter. I would have thought that the Winter rides would have decreased, while the Spring rides, as the weather improves and warms up, would see more riders. However, the opposite was true, with Winter being more popular than Spring.`
 
 ***
