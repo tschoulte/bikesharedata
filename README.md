@@ -37,7 +37,7 @@ Pictured above is a graph showing pass usage based on the season. I selected thi
 ### 6. Net change in bikes
 
 ***
-### 7. Trip route category-passholder combos
+### 7. Route-passholder combos
 
 `Talk about what combination would be more popular`
 ***
