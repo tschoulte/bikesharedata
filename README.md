@@ -32,7 +32,7 @@ Below are the top 10 stations for drop-off and pick-up:
 ### 3. Average distance traveled
 Below is the average distance computed for all one-way trips.
 
-Under Function 3, a deeper explanation is given of my distance calculating method, but this method calculates Euclidean distance between the origin and final destination stations. This means that round-trips and rows without specified stations ('blank rows') are excluded from this calculation, as this could lead to miscalculations based on various assumptions, such as bike speed and whether a bike is traveling the entire duration or not.
+Under [Function 3](https://tschoulte.github.io/bikesharedata/#function-3), a deeper explanation is given of my distance calculating method, but this method calculates Euclidean distance between the origin and final destination stations. This means that round-trips and rows without specified stations ('blank rows') are excluded from this calculation, as this could lead to miscalculations based on various assumptions, such as bike speed and whether a bike is traveling the entire duration or not.
 
 <img src="Github Pages/Function 3/2.jpg" class="img-responsive" alt="" width="550">
 
