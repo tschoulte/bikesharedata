@@ -1,8 +1,16 @@
-## Welcome to My Bikeshare Data Analyzer
+# Welcome to My Bikeshare Data Analyzer
+
+## Data Visuals
+<img src="Github Pages/Graphs/1.jpg" class="img-responsive" alt="" width = 500>
+<img src="Github Pages/Graphs/2.jpg" class="img-responsive" alt="" width = 500>
+<img src="Github Pages/Graphs/3.jpg" class="img-responsive" alt="" width = 500>
+
 
 Below is the documentation for my Python-coded bikeshare data analyzing script implemented for the [Capital One MindSumo Challenge](https://www.mindsumo.com/contests/bikeshare-data).
 
-### Overview of Solution: App and Main Menu
+
+
+## Overview of Solution: App and Main Menu
 The analysis program consists of the three following files:
 <br>
 <img src="Github Pages/Main Menu/1.jpg" class="img-responsive" alt="">
@@ -23,7 +31,7 @@ Throughout my script, I have implemented protections against edge-case scenarios
 <img src="Github Pages/Function 1/2.jpg" class="img-responsive" alt="">
 <img src="Github Pages/Function 1/3.jpg" class="img-responsive" alt="">
 <img src="Github Pages/Function 1/4.jpg" class="img-responsive" alt="">
-<img src="Github Pages/Function 1/5.jpg" class="img-responsive" alt="">
+<img src="Github Pages/Function 1/5.jpg" class="img-responsive" alt="" width="250">
 <img src="Github Pages/Function 1/6.jpg" class="img-responsive" alt="">
 <img src="Github Pages/Function 1/7.jpg" class="img-responsive" alt="">
 
