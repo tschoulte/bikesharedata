@@ -26,7 +26,6 @@ Pictured above is a graph showing pass usage based on the season. I selected thi
 Below are the top 10 stations for drop-off and pick-up:
 
 <img src="Github Pages/Function 2/2.jpg" class="img-responsive" alt="" width="250">
-
 <img src="Github Pages/Function 1/5.jpg" class="img-responsive" alt="" width="250">
 
 ***
