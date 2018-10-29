@@ -11,7 +11,7 @@ Pictured above is a graph of the average distance (in km) traveled in each of th
 ***
 <img src="Github Pages/Graphs/2.jpg" width="500">
 
-Pictured above is a graph of the number of bike pickups from all of the stations, with the x-axis (the station numbers) omitted). What I thought was most interesting were the 8 last stations. Over the course of July - March, **a 9 month period**, less than 200 bikes were picked up from each of these stations. Even at 191 bikes over 9 months, that still averages less than 1 bike a day being pulled.
+Pictured above is a graph of the number of bike pickups from all of the stations, with the x-axis label (the station numbers) omitted, while the height represents the total number of pickups at each station. What I thought was most interesting were the 8 last stations. Over the course of July - March, **a 9 month period**, less than 200 bikes were picked up from each of these stations. Even at 191 bikes over 9 months, that still averages less than 1 bike a day being pulled.
 
 ***
 <img src="Github Pages/Graphs/3.jpg" width="500">
@@ -47,23 +47,27 @@ I considered only Monthly Pass holders and Staff Annual Pass holders to be 'regu
 Each of the four seasons have seven quantitative characteristics associated with it which can be graphed to display trending characteristics visually.
 <img src="Github Pages/Function 5/2.jpg" class="img-responsive" alt="">
 
-`STILL MISSING: How does ridership change with seasons? Types of passes used, trip duration, etc`
+Some key characteristics to note:
+* Average one-way distance traveled plumetted during Spring and Winter, while being exceptionally low in the Fall
+* Average commute time stayed relatively constant, but was the highest in the Winter and Spring.
+* The total number of rides was highest in the Fall, following closely with Summer and Winter, before coming in last with the Spring
+* Annual Pass rides did not exist before the Fall of 2016 for our dataset.
+* Walk-ups were dramatically more popular in the Fall.
 
 ***
 ### 6. Net change in bikes
+Provided an input date, two graphs will be generated to inform the user of which station is in most need of having bikes removed, and which station is in most need of having bikes added. The function to determine priorities is further explained in Function 6 below.
+
+Provided January 2nd, 2017 as an input date, it was determined that Station 3042 was most in need of bikes, and Station 3030 was most in need of bikes removed. Since the need for both stations have these needs around 3pm, in this example, bikes from 3030 could be moved to 3042 around 3pm.
 
 <img src="Github Pages/Graphs/4.png">
-
 <img src="Github Pages/Graphs/5.png">
-
-`STILL MISSING: Is there a net change of bikes over the course of a day? If so, when and
-where should bikes be transported in order to make sure bikes match travel patterns?`
 
 ***
 ### 7. Route-passholder combos
 <img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
 
-`STILL MISSING: What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular?`
+A majority of trips are one-way trips. Of these one-way trips, a majority of them are from monthly pass holders. Analyzing round-trips, a majority of the round-trip users are walk-ups. Another notable trend would be that, given a group of flex-pass riders, a majority of them would most likely take a one-way ride.
 
 ***
 # Overview of Solution
