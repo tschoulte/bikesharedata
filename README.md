@@ -28,15 +28,32 @@ Throughout my script, I have implemented protections against edge-case scenarios
 
 ### Function 0: Exit
 <img src="Github Pages/Function 0/1.jpg" class="img-responsive" alt="">
+*The least exciting function to implement.* This function takes no input, simply closing the program.
 
 ### Function 1: Which start stations are most popular?
 <img src="Github Pages/Function 1/1.jpg" class="img-responsive" alt="">
+Running function '1' will cause a prompt to appear, asking for how many of the most popular stations the user desires to have returned based on the number of unique stations in the dataset.
+- After entering a desired quantity, the program then asks for a filename to export the analyzed data to.
+- By just clicking 'Enter', the default filename displayed is chosen. Otherwise, the user can type their own custom filename.
+- After deciding on a file name, the program prompts the user whether they wish to open the file or not.
+
 <img src="Github Pages/Function 1/2.jpg" class="img-responsive" alt="">
+Another place where input-guards has been implemented has been the filename selection prompt. All inputs must have a .csv data type extension, the extension must be at the end of the file name, and the file name must be longer than 4 characters (e.g., not just ".CSV").
+
 <img src="Github Pages/Function 1/3.jpg" class="img-responsive" alt="">
 <img src="Github Pages/Function 1/4.jpg" class="img-responsive" alt="">
+Expanding on earlier, when prompted whether to open the file or not, selecting'Y' will open it in a spreadsheet program automatically (e.g., Excel), while selecting 'N' will...well, not open it! Each has their own responses as show above, but both will return to the main menu for further actions to be taken on the data.
+
 <img src="Github Pages/Function 1/5.jpg" class="img-responsive" alt="" width="250">
+Above is the output data in the .csv file. There will be two columns, one denoting the station, and the other the number of pickups that occured at the dock. They are ordered by most popular, and in this case, we selected the top 10 start locations.
+
 <img src="Github Pages/Function 1/6.jpg" class="img-responsive" alt="">
+Furthermore, due to the program's CSV write functionality, if a user requests data, and opens the CSV file, and then wants to request more data and save it under the same filename without first closing the CSV file, the program will be unable to write to the file. Under normal circumstances, this would cause a program to crash due to a write error. However, my script is guarded against this behavior by checking if the file is open, and if it is, it prompts the user to close the file and click 'Enter' to resume the data write.
+
 <img src="Github Pages/Function 1/7.jpg" class="img-responsive" alt="">
+Finally, after the file has or has not been opened, the program automatically returns to the main menu.
+
+**It is worth mentioning at this point in the introduction that the primary guards and functionality of the program has been described in this section. All further sections will share similar guards such as write protection, input-guards for strings, dates, and integers when prompted, and and the ability to open files after the data export is complete.**
 
 ### Function 2: Which stop stations are most popular?
 <img src="Github Pages/Function 2/1.jpg" class="img-responsive" alt="">
