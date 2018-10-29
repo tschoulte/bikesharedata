@@ -23,22 +23,22 @@ Pictured above is a graph showing pass usage based on the season. I selected thi
 
 ***
 ### 2. Most popular stations
-
+<img src="Github Pages/Function 2/2.jpg" class="img-responsive" alt="" width="250">
 ***
 ### 3. Average distance traveled
-
+<img src="Github Pages/Function 3/2.jpg" class="img-responsive" alt="" width="550">
 ***
 ### 4. Regular bike commuters
-
+<img src="Github Pages/Function 4/2.jpg" class="img-responsive" alt="" width="600">
 ***
 ### 5. Seasonal ridership trends
-
+<img src="Github Pages/Function 5/2.jpg" class="img-responsive" alt="">
 ***
 ### 6. Net change in bikes
-
+<img src="Github Pages/Function 6/3.jpg" class="img-responsive" alt="">
 ***
 ### 7. Route-passholder combos
-
+<img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
 `Talk about what combination would be more popular`
 ***
 # Overview of Solution
