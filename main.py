@@ -16,7 +16,7 @@ pDuration = 11
 tripCat, passType = 12, 13
 startLatLong, endLatLong = 14, 15
 
-#open csv file
+#open csv data file
 f = open('data.csv') #change data source here quickly
 csv_f = csv.reader(f)
 
@@ -93,8 +93,8 @@ def most_popular_stations(start_stop):
     #write the desired quantity of data to "output_filename"
     output_filename = 'Popular ' + start_stop + ' Locations.csv' #default filename
     output_filename = choose_filename(output_filename)           #allows user to specify unique filename
-    columnheaders = ["Popular " + start_stop + " Locations", "Occurrences"]
-    data_list = popular_loc
+    columnheaders = ["Popular " + start_stop + " Locations", "Occurrences"] #header of the output csv file
+    data_list = popular_loc #data to fill the rows
     return_string = output_filename + " now has the " + str(desired_quantity) + " most popular " + start_stop.lower() + " locations."
     output_data(output_filename, columnheaders, data_list, return_string, desired_quantity)
 
@@ -144,8 +144,8 @@ def average_distance_traveled():
     #write the desired quantity of data to "output_filename"
     output_filename = 'Average Distance Traveled.csv' #default filename
     output_filename = choose_filename(output_filename) #allows user to specify unique filename
-    columnheaders = ["Average Distance Traveled (km)", "# of Round Trips Excluded", "Number of Blank Entries Excluded"]
-    data_list = [[return_message1, return_message2, return_message3]]
+    columnheaders = ["Average Distance Traveled (km)", "# of Round Trips Excluded", "Number of Blank Entries Excluded"] #header of the output csv file
+    data_list = [[return_message1, return_message2, return_message3]] #data to fill the rows
     return_string = output_filename + " now has the average distance traveled stored!"
     desired_quantity = len(data_list)
     output_data(output_filename, columnheaders, data_list, return_string, desired_quantity)
@@ -192,10 +192,8 @@ def regular_commuters():
 #5:How does ridership change with seasons? Types of passes used, trip duration, etc
 #Meterological Seasons: Spring: March-May (3-5), Summer: June-August (6-8), Fall: September-November (9-11), Winter: December-February (12,1,2)
 def seasonal_trends():
-    spring = [] #hold data for our given season
-    summer  = []
-    fall = []
-    winter = []
+    #hold data for our given meterological seasons
+    spring, summer, fall, winter = [], [], [], [] 
 
     for row in data: #for each row in the dataset
         #extract date and put it into list if it matches our desired date
@@ -205,7 +203,7 @@ def seasonal_trends():
         month = datetime_start.month
 
         #if the desired month is the in the range of our season, append the data row to this season's data
-        #                    0            1               2           3               4               5         6 (START TIME) 7 (STOP TIME)      8           9 
+        #indices             0            1               2           3               4               5         6 (START TIME) 7 (STOP TIME)      8           9 
         station_info = [row[sStatID], row[sStatLat], row[sStatLon], row[eStatID], row[eStatLat], row[eStatLon], datetime_start, datetime_end, pass_type, row[tripCat]]
         if 3 <= month <= 5:     #Spring
             spring.append(station_info)   #add the data to the season's list
@@ -216,16 +214,14 @@ def seasonal_trends():
         else:                   #Winter
             winter.append(station_info)   #add the data to the season's list
     
-    
     #At this point, we have our data that fits our date in four unorganized lists:
     #Spring, Summer, Fall, and Winter
     annual_seasons = [spring, summer, fall, winter]
     i = 0
-    final_ans = [["Spring"],["Summer"],["Fall"],["Winter"]]
-    for season in annual_seasons:
-        
+    final_ans = [["Spring"],["Summer"],["Fall"],["Winter"]] #this final-output data is prefilled with the row-headers.
 
-    #average distance
+    ######### AVERAGE DISTANCE BY SEASON ###########
+    for season in annual_seasons:
         R = 6373.0 # approximate radius of earth in km
         total_distance = 0 #sum of all valid distances
         num_rows = 0 #used for dividing sum of distance for average distance. Excludes round_trip_counter and blank_counter
@@ -259,27 +255,27 @@ def seasonal_trends():
                 round_trip_counter += 1
 
         try:
-            ans = total_distance/num_rows
+            ans = total_distance/num_rows #compute average
             return_message1 = str(round(ans, 2)) + " km"
         except ZeroDivisionError: #avoid dividing by zero if all trips were round-trip
             return_message1 = "Only Round Trips/No Data"
-        final_ans[i].append(return_message1)
 
-    #avg duration
-        total_time = 0 #sum of all valid distances
-        num_rows = 0 #used for dividing sum of distance for average distance. Excludes round_trip_counter and blank_counter
+        final_ans[i].append(return_message1) #APPEND THIS COMPUTED DATA TO OUR DATASET FOR THE RESPECTIVE SEASON
+
+    ###### AVERAGE DURATION BY SEASON ##########
+        total_time = 0 #sum of all valid durations
+        num_rows = 0 #used for dividing sum of durations for average duration.
 
         for trip in season: #for each row in the dataset
             start_time = trip[6]
             end_time = trip[7]
-            if (start_time and end_time) != "": #if the start or stop lon/lat's contain data, calculate
+            if (start_time and end_time) != "": #if the start or stop times contain actualy non-blank data, calculate
                 num_rows += 1
                 #calculate delta in time between docking and undocking (in minutes)
                 minute_delta = (end_time - start_time).seconds / 60
-
                 total_time += minute_delta
 
-            else: #if the start or stop lon/lat's don't contain data, increment blank_counter
+            else: #if the start or stop times don't contain data, increment blank_counter
                 blank_counter += 1
 
         try:
@@ -287,14 +283,14 @@ def seasonal_trends():
             return_message1 = str(round(ans, 1)) + " minutes"
         except ZeroDivisionError: #avoid dividing by zero if no trips
             return_message1 = "No Data"
-        final_ans[i].append(return_message1)
+        final_ans[i].append(return_message1) #APPEND THIS COMPUTED DATA TO OUR DATASET FOR THE RESPECTIVE SEASON
         
+        
+        ###### Check the # of passes of each type used per season #########
         pass_type_sums = [0,0,0,0,0]
-    #check # of passes of each type used.
         for trip in season: #for each row in the dataset
             pass_value = trip[8]
             
-
             if pass_value == "Staff Annual":
                 pass_type_sums[4] += 1 #total of all commutes
                 pass_type_sums[0] += 1    #increment Monthly Pass occurrence by 1
@@ -308,21 +304,19 @@ def seasonal_trends():
                 pass_type_sums[4] += 1 #total of all commutes
                 pass_type_sums[3] += 1    #increment Annual Pass occurrence by 1
 
-        final_ans[i].append(pass_type_sums)
-        i += 1
+        final_ans[i].append(pass_type_sums) #APPEND THIS COMPUTED DATA TO OUR DATASET FOR THE RESPECTIVE SEASON
+        i += 1 #Change to the next season!
     
-    data_list = []
-    for season in final_ans:
-        data_list.append([season[0],season[1],season[2],season[3][4],season[3][0],season[3][1],season[3][2],season[3][3]])
+    data_list = [] #this will be our spreadsheet's data, but first it needs to be more organized...
+    for season in final_ans: #for each season
+        data_list.append([season[0],season[1],season[2],season[3][4],season[3][0],season[3][1],season[3][2],season[3][3]]) #organize the data into the rows as desired
     #write the desired quantity of data to "output_filename"
     output_filename = 'Seasonal Trends.csv' #default filename
     output_filename = choose_filename(output_filename)           #allows user to specify unique filename
-    columnheaders = ["Season", "Average Distance Traveled", "Average Commute Time", "Total Number of Rides", "Total Annual Pass Rides", "Total Month Pass Rides", "Total Flex Pass Rides", "Total Walk-Up Rides"]
-    data_list = data_list
+    columnheaders = ["Season", "Average Distance Traveled", "Average Commute Time", "Total Number of Rides", "Total Annual Pass Rides", "Total Month Pass Rides", "Total Flex Pass Rides", "Total Walk-Up Rides"] #column headers
     return_string = output_filename + " now stores data on seasonal trends."
     desired_quantity = len(data_list)
     output_data(output_filename, columnheaders, data_list, return_string, desired_quantity)
-
 
 #6: Which locations require bike transport to maintain bike levels?
 def bike_transport():
@@ -428,7 +422,36 @@ def bike_transport():
 
 #7: What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular?
 def trip_passholder_combos():
-    exit
+    data_list = [["Round Trip", 0, 0, 0, 0],
+                 ["One Way", 0, 0, 0, 0]] #our final output data, starting with two row headers 'Round trip' and 'One Way'
+
+    for trip in data:
+        trip_cat = trip[tripCat]
+        pass_type = trip[passType]
+
+        if trip_cat == "Round Trip":
+            y = 0   #add it to the round-trip row
+        else:
+            y = 1   #add it to the one-way row
+        
+        if pass_type == "Staff Annual":
+            x = 1   #add it to the annual column
+        elif pass_type == "Monthly Pass":
+            x = 2   #add it to the monthly column
+        elif pass_type == "Flex Pass":
+            x = 3   #add it to the flex pass column
+        else: #if the 'pass' is a walk-up
+            x = 4   #add it to the walk-up column
+            
+        data_list[y][x] += 1    #add it to our output data, in the respective row and column
+
+    #write the desired quantity of data to "output_filename"
+    output_filename = 'Passholder and Trip Type Relationships.csv' #default filename
+    output_filename = choose_filename(output_filename)           #allows user to specify unique filename
+    columnheaders = ["", "Annual Pass Rides", "Monthly Pass Rides", "Flex Pass Rides", "Walk-up Rides"]
+    return_string = output_filename + " now stores data on passholder/trip type relationships."
+    desired_quantity = len(data_list)
+    output_data(output_filename, columnheaders, data_list, return_string, desired_quantity)
 
 #!!!!################## Secondary Input/Parsing Functions #######################!!!!#
 
@@ -507,29 +530,28 @@ def output_data(output_filename, columnheaders, data_list, return_string, desire
 def open_file(output_filename):
     print("Would you like to open the file now?")
     x = input("Type 'Y' or 'N' >>> ")
-    if isinstance(x, str) == False:
+    if isinstance(x, str) == False: #if entry was not a valid string
         print("Invalid entry! Please only type Y or N, no quotes")
         open_file(output_filename)
 
-    if x.lower() == "y":
-        Popen(output_filename, shell=True)
+    if x.lower() == "y": #if 'Y' was typed
+        Popen(output_filename, shell=True) #open the file
         print(output_filename + " has been opened!")
-    elif x.lower() == "n":
+    elif x.lower() == "n": #if 'N' was typed
         print("Not opening it. No problem!")
-    else:
+    else: #if neither 'y' nor 'n'
         print("Invalid entry! Please only type Y or N, no quotes")
         print('')
-        open_file(output_filename)
+        open_file(output_filename) #recursive call for a valid answer
 
     print('Hope that helped! Sending you to the main menu now!')
     print('')
-    main_menu()
+    main_menu() #return to the main menu
 
 def graph_station(x_axis, station, plot_title):
     # heights of bar graphs
     red_height = []
     green_height = []
-
 
     #Populate red_height for bikes lost, populate green_height for bikes gained
     i = 0
@@ -573,4 +595,4 @@ def graph_station(x_axis, station, plot_title):
     plt.title(plot_title) # plot title 
     plt.show() #Show Graph
 
-main_menu()
+main_menu() #Opens the main menu upon program initialization
