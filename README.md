@@ -5,7 +5,7 @@ Below is the documentation for my Python-coded bikeshare data analyzing script i
 <img src="Github Pages/Graphs/1.jpg" width = 500>
 <img src="Github Pages/Graphs/2.jpg" width = 500>
 <img src="Github Pages/Graphs/3.jpg" width = 500>
-
+<img src="Github Pages/Main Menu/3.jpg" class="img-responsive" alt="">
 
 ## Overview of Solution
 ### App and Main Menu
