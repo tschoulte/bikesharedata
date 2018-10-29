@@ -63,7 +63,7 @@ Above is function 1's output data in the .csv file. There will be two columns, o
 Furthermore, due to the program's CSV write functionality, if a user requests data and opens the CSV file, but then wishes to request more data and save it under the same filename without first closing the CSV file, the program will be unable to write to the file. Under normal circumstances, this would cause a program to crash due to a write error. However, my script is guarded against this behavior by checking if the file is open, and if it is, it prompts the user to close the file and click 'Enter' to resume the data write.
 
 <img src="Github Pages/Function 1/7.jpg" class="img-responsive" alt="">
-Finally, after the file has or has not been opened, the program automatically returns to the main menu.
+Finally, after the file has or has not been opened, the program automatically returns to the main menu. **All functions upon completion of exporting the data, return to the main menu automatically**
 
 **It is worth mentioning at this point in the introduction that the guards and functionality of this function are primary to the program. These functionaltiies will, from now onward, be skimmed over for the following functions. All further sections will share similar guards such as write protection, input-guards for strings, dates, and integers when prompted, and the ability to open files after the data export is complete.**
 
@@ -96,13 +96,17 @@ After running function 4, the code asks which file the data should be written to
 <img src="Github Pages/Function 5/1.jpg" class="img-responsive" alt="">
 
 After running function 5, the entries of the data set are split into 4 meterological seasons:
-* Spring, Summer, Fall, and Winter
+* Spring
+* Summer
+* Fall
+* Winter
 
-After splitting the data, operations are performed on these seasonal subsets of the whole data set. These functions include:
+After branching the data, operations are performed on these seasonal subsets of the whole data set. These functions include:
 * Average distance traveled (in km)
 * Average commute time (in minutes)
 * Total number of rides
 * Total rides based on the pass type
+
 The data is then arranged and output in the following format based on season:
 
 <img src="Github Pages/Function 5/2.jpg" class="img-responsive" alt="">
@@ -111,23 +115,26 @@ The data is then arranged and output in the following format based on season:
 ### Function 6: Bike transport to maintain bike levels
 <img src="Github Pages/Function 6/1.jpg" class="img-responsive" alt="">
 
-After running function 6, the user is prompted to enter a date, including day, month, and year. Similarly, this function has guards on both month and day entries, and if the date selected has no entries, it informs the user as shown above, with a message stating there is not data for the avaialable date. It then returns to the main menu.
+After running function 6, the user is prompted to enter a date, including day, month, and year. Similarly, this function has guards on both month and day entries, and if the date selected has no data entries, it informs the user as shown above, with a message stating there is not data for the avaialable date. It then returns to the main menu.
 
 However, provided that a desired date for analysis is selected which has data, the function will return two stations' data:
 1. The station which most desperately requires more bikes be added
 2. The station which most desperately requires bikes to be removed
 
-There were several ways in which this priority could be calculated. I chose to have my function analyze all stations and their hourly net change of bikes (by summing the bikes leaving and arriving at a station for every given hour of the desired day). After sorting this list in reverse descending order, the station with an hour containing the largest negative or positive delta of bikes for any given hour took priority for either needing bike replenishment or removal respectively.
+There were several ways in which this priority could be calculated. I chose to have my function analyze all stations and their hourly net change of bikes by summing the bikes leaving and arriving at a station for every given hour of the desired day. After sorting this list in reverse descending order, the station with an hour containing the largest negative or positive delta of bikes for any given hour took priority for either needing bike replenishment or removal respectively.
 
-The function then outputs two graphs depicted below. The first graph displays the station number and an hourly graph of the net change in bikes for that day, stating that bikes need to be added. This graph can be saved or manipulated using the controls on the graph window. Its also worth noting that, a bar graph y-value of zero implies no net change in bikes for that hour.
+The function then outputs two graphs depicted below. The first graph displays the station number and an hourly graph of the net change in bikes for that day, stating that bikes need to be added. This graph can be saved or manipulated using the controls on the graph window. Its also worth noting that a bar graph y-value of zero implies no net change in bikes for that hour.
 
 <img src="Github Pages/Function 6/2.jpg" class="img-responsive" alt="">
 
-After this graph is closed, the second graph is generated, showing an hourly graph of the net change in bikes for that day at the denoted station, stating that bikes need to be removed.
+After the first graph is closed, the second graph is generated automatically, showing an hourly graph of the net change in bikes for that day at the denoted station, stating that bikes need to be removed.
 
 <img src="Github Pages/Function 6/3.jpg" class="img-responsive" alt="">
 
 ***
 ### Function 7: Breakdown of trip route category - passholder type combinations
 <img src="Github Pages/Function 7/1.jpg" class="img-responsive" alt="">
+
+After running function 7, the program asks for a desired filename, before saving them to a datasheet for viewing. The output CSV file sorts the data into Round Trip and One Way trip categories. Then, it sums then number of rides for each passholder which occured under each trip category. Below is a copy of what is returned for our dataset.
+
 <img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
