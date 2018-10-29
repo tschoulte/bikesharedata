@@ -1,7 +1,7 @@
 # Welcome to My Bikeshare Data Analyzer
 Below is the documentation for my Python-coded bikeshare data analyzing script implemented for the [Capital One MindSumo Challenge](https://www.mindsumo.com/contests/bikeshare-data).
 ## 7 Primary Deliverables
-### 3 Data Visuals
+### 1. Three Interesting Data Visuals
 <img src="Github Pages/Graphs/1.jpg" width="500">
 
 Pictured above is a graph of the average distance (in km) traveled in each of the 4 seasons. I selected this graph because I thought it was very interesting how drastic the drop in average distance traveled was for the Fall season. While I understood that Spring and Winter traveling distance would be lower, I didn't suspect that Fall would be as low as it was. I assumed it would be closer to Summer levels.
@@ -20,7 +20,26 @@ Pictured above is a graph showing pass usage based on the season. I selected thi
 2. I was suprised that the number of monthly pass rides is significantly lower in the Spring than the Winter. I would have thought that the Winter rides would have decreased compared to the Fall, while the Spring rides, as the weather improves and warms up, would see more riders than the Winter. However, the opposite was true, with Winter oddly being more popular than Spring.
 
 ***
-## Overview of Solution
+### 2. Which start/stop stations are most popular?
+
+***
+### 3. What is the average distance traveled?
+
+***
+### 4. How many riders include bike sharing as a regular part of their commute?
+
+***
+### 5. How does ridership change with seasons?
+
+***
+### 6. Is there a net change of bikes over the course of a day?
+
+***
+### 7. What is the breakdown of Trip Route Category-Passholder type combinations? 
+
+`Talk about what combination would be more popular`
+***
+# Overview of Solution
 ### App and Main Menu
 My analysis program consists of the three following files:
 <br>
