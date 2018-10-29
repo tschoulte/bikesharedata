@@ -196,6 +196,6 @@ After the first graph is closed, the second graph is generated automatically, sh
 `What is the breakdown of Trip Route Category-Passholder type combinations?`
 <img src="Github Pages/Function 7/1.jpg" class="img-responsive" alt="">
 
-After running Function 7, the program asks for a desired filename, before saving them to a datasheet for viewing. The output CSV file sorts the data into Round Trip and One Way trip categories. Then, it sums then number of rides for each passholder which occured under each trip category. Below is a copy of what is returned for our dataset.
+After running Function 7, the program asks for a desired filename, before saving them to a datasheet for viewing. The output CSV file sorts the data into Round Trip and One Way trip categories. Then, it sums then number of rides for each passholder which occured under each trip category. Below is a copy of what is returned after analyzing the provided data file.
 
 <img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
