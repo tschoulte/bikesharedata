@@ -22,22 +22,22 @@ Pictured above is a graph showing pass usage based on the season. I selected thi
 2. I was suprised that the number of monthly pass rides is significantly lower in the Spring than the Winter. I would have thought that the Winter rides would have decreased compared to the Fall, while the Spring rides, as the weather improves and warms up, would see more riders than the Winter. However, the opposite was true, with Winter oddly being more popular than Spring.
 
 ***
-### 2. Which start/stop stations are most popular?
+### 2. Most popular stations
 
 ***
-### 3. What is the average distance traveled?
+### 3. Average distance traveled
 
 ***
-### 4. How many riders include bike sharing as a regular part of their commute?
+### 4. Regular bike commuters
 
 ***
-### 5. How does ridership change with seasons?
+### 5. Seasonal ridership trends
 
 ***
-### 6. Is there a net change of bikes over the course of a day?
+### 6. Net change of bike quantities
 
 ***
-### 7. What is the breakdown of Trip Route Category-Passholder type combinations? 
+### 7. Trip route category-passholder combos? 
 
 `Talk about what combination would be more popular`
 ***
