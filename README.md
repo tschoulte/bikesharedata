@@ -62,6 +62,7 @@ where should bikes be transported in order to make sure bikes match travel patte
 <img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
 
 `What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular?`
+
 ***
 # Overview of Solution
 ### App and Main Menu
@@ -81,13 +82,13 @@ Throughout my script, I have implemented protections against edge-case scenarios
 
 ***
 ### Function 0
-**Exit**
+`**Exit**`
 <img src="Github Pages/Function 0/1.jpg" class="img-responsive" alt="">
 _The least exciting function to implement._ This function takes no input, simply closing the program.
 
 ***
 ### Function 1
-**Most popular start stations**
+`Most popular start stations`
 <img src="Github Pages/Function 1/1.jpg" class="img-responsive" alt="">
 Running function '1' will cause a prompt to appear, asking for how many of the most popular stations the user desires to have returned based on the number of unique stations in the dataset.
 - After entering a desired quantity, the program then asks for a filename to export the analyzed data to.
