@@ -56,7 +56,7 @@ Some key characteristics to note:
 
 ***
 ### 6. Net change in bikes
-Provided an input date, two graphs will be generated to inform the user of which station is in most need of having bikes removed, and which station is in most need of having bikes added. The function to determine priorities is further explained in Function 6 below.
+Provided an input date, two graphs will be generated to inform the user of which station is in most need of having bikes removed, and which station is in most need of having bikes added. The function to determine priorities is further explained in [Function 6](https://tschoulte.github.io/bikesharedata/#function-6) below.
 
 Provided January 2nd, 2017 as an input date, it was determined that Station 3042 was most in need of bikes, and Station 3030 was most in need of bikes removed. Since the need for both stations have these needs around 3pm, in this example, bikes from 3030 could be moved to 3042 around 3pm.
 
