@@ -28,7 +28,7 @@ Throughout my script, I have implemented protections against edge-case scenarios
 
 ### Function 0: Exit
 <img src="Github Pages/Function 0/1.jpg" class="img-responsive" alt="">
-*The least exciting function to implement.* This function takes no input, simply closing the program.
+The least exciting function to implement. This function takes no input, simply closing the program.
 
 ### Function 1: Which start stations are most popular?
 <img src="Github Pages/Function 1/1.jpg" class="img-responsive" alt="">
