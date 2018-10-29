@@ -22,8 +22,9 @@ Syntax highlighted code block
 2. List
 
 **Bold** and _Italic_ and `Code` text
-
+![useful image]({{ site.url }}/Github Pages/Function 0/1.jpg)
 [Link](url) and ![Image](src)
+<img src="/images/Function 0/1.jpg" alt="hi" class="inline"/>
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
