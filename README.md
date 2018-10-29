@@ -68,14 +68,20 @@ Finally, after the file has or has not been opened, the program automatically re
 
 ### Function 2: Which stop stations are most popular?
 <img src="Github Pages/Function 2/1.jpg" class="img-responsive" alt="">
+
+After running function 2, similar to most popular start locations, the program asks for the desired number of most popular start locations, before saving them to a datasheet for viewing. Below is a copy of what is returned after requesting 10 most popular stop locations.
 <img src="Github Pages/Function 2/2.jpg" class="img-responsive" alt="" width="250">
 
 ### Function 3: What is the average distance traveled?
 <img src="Github Pages/Function 3/1.jpg" class="img-responsive" alt="">
+
+After running function 3, the code asks which file the data should be written to, and stores an Excel file with the following data format depicted below. Average distance was calculated by excluding round trips and entries where the Lat and Long coordinates were left blank, and measuring the Euclidean distance between the one-way trips. This only resulted in 9% of the data set being ignored for average distance calculations.
 <img src="Github Pages/Function 3/2.jpg" class="img-responsive" alt="" width="550">
 
 ### Function 4: How many riders include bike sharing regularly?
 <img src="Github Pages/Function 4/1.jpg" class="img-responsive" alt="">
+
+After running function 4, the code asks which file the data should be written to, and stores an Excel file with the following data format depicted below. The code assumes that only monthly and annual pass rides are "regular" commutes, due to the provided defintions on the bikeshare data website for walk-up and flex-pass. This Excel file stores the raw quantity of monthly pass rides and annual pass rides, 
 <img src="Github Pages/Function 4/2.jpg" class="img-responsive" alt="" width="600">
 
 ### Function 5: Analyze seasonal trends (e.g. PassType, Duration)
