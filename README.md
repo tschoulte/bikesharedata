@@ -1,6 +1,8 @@
 # Welcome to My Bikeshare Data Analyzer
 Below is the documentation for my Python-coded bikeshare data analyzing script implemented for the [Capital One MindSumo Challenge](https://www.mindsumo.com/contests/bikeshare-data).
-## 7 Primary Deliverables
+
+***
+# 7 Primary Deliverables
 ### 1. Three Interesting Data Visuals
 <img src="Github Pages/Graphs/1.jpg" width="500">
 
