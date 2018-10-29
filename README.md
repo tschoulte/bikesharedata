@@ -3,14 +3,17 @@ Below is the documentation for my Python-coded bikeshare data analyzing script i
 ## 7 Primary Deliverables
 ### 3 Data Visuals
 <img src="Github Pages/Graphs/1.jpg" width="500">
+<br>
 Pictured above is a graph of the average distance (in km) traveled in each of the 4 seasons. I selected this graph because I thought it was very interesting how drastic the drop in average distance traveled was for the Fall season. While I understood that Spring and Winter would be lower, I didn't suspect that Fall would be as low as it was. I assumed it would be closer to Summer levels.
 
 <img src="Github Pages/Graphs/2.jpg" width="500">
+<br>
 Pictured above is a graph of the number of bike pickups from all of the stations, with the x-axis (the station numbers) omitted). What I thought was most interesting were the 8 last stations. All of these stations, over the course of July - March, **a 9 month period**, less than 200 bikes were picked up from these stations. Even at 191 bikes over 9 months, that still averages less than 1 bike a day being pulled.
 <img src="Github Pages/Graphs/3.jpg" width="500">
+<br>
 Pictured above is a graph showing pass usage based on the season. I selected this graph because of two factors:
 1. I realized that the Staff Annual pass did not have any riders in Spring and Summer, so I wonder if this pass was brought to fruition in the Fall of 2016.
-2. 
+2. I was surprised that the number of monthly pass rides is significantly lower in the Spring than the Winter. I would have thought that the Winter rides would have decreased, while the Spring rides, as the weather improves and warms up, would see more riders. However, the opposite was true, with Winter being more popular than Spring.
 
 ## Overview of Solution
 ### App and Main Menu
