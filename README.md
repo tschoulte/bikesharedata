@@ -100,6 +100,7 @@ After running function 4, the code asks which file the data should be written to
 <img src="Github Pages/Function 6/2.jpg" class="img-responsive" alt="">
 <img src="Github Pages/Function 6/3.jpg" class="img-responsive" alt="">
 
+***
 ### Function 7: Breakdown of trip route category - passholder type combinations
 <img src="Github Pages/Function 7/1.jpg" class="img-responsive" alt="">
 <img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
