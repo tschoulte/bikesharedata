@@ -41,7 +41,7 @@ Another place where input-guards has been implemented has been the filename sele
 <img src="Github Pages/Function 1/4.jpg" class="img-responsive" alt="">
 Expanding on earlier, when prompted whether to open the file or not, selecting'Y' will open it in a spreadsheet program automatically (e.g., Excel), while selecting 'N' will...well, not open it! Each has their own responses as show above, but both will return to the main menu for further actions to be taken on the data.
 
-<img src="Github Pages/Function 1/5.jpg" class="img-responsive" alt="" width="250">
+<img src="Github Pages/Function 1/5.jpg" class="img-responsive" alt="" width="250"> <br>
 Above is the output data in the .csv file. There will be two columns, one denoting the station, and the other the number of pickups that occured at the dock. They are ordered by most popular, and in this case, we selected the top 10 start locations.
 
 <img src="Github Pages/Function 1/6.jpg" class="img-responsive" alt="">
