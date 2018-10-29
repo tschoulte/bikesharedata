@@ -153,7 +153,8 @@ After the first graph is closed, the second graph is generated automatically, sh
 <img src="Github Pages/Function 6/3.jpg" class="img-responsive" alt="">
 
 ***
-### Function 7: Trip route category-passholder combos
+### Function 7
+**Trip route category-passholder combos**
 <img src="Github Pages/Function 7/1.jpg" class="img-responsive" alt="">
 
 After running function 7, the program asks for a desired filename, before saving them to a datasheet for viewing. The output CSV file sorts the data into Round Trip and One Way trip categories. Then, it sums then number of rides for each passholder which occured under each trip category. Below is a copy of what is returned for our dataset.
