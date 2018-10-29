@@ -38,22 +38,30 @@ Under Function 3, a deeper explanation is given of my distance calculating metho
 
 ***
 ### 4. Regular bike commuters
+I considered only Monthly Pass holders and Staff Annual Pass holders to be 'regular' riders. Therefore, After summing the two quantities of rides deemded regular, 81,686 total rides were regular rides, accounting for 61.68% of all rides.
 
 <img src="Github Pages/Function 4/2.jpg" class="img-responsive" alt="" width="600">
 
 ***
 ### 5. Seasonal ridership trends
+Each of the four seasons have seven quantitative characteristics associated with it which can be graphed to display trending characteristics visually.
 <img src="Github Pages/Function 5/2.jpg" class="img-responsive" alt="">
+
+`How does ridership change with seasons? Types of passes used, trip duration, etc`
 
 ***
 ### 6. Net change in bikes
+
 <img src="Github Pages/Function 6/3.jpg" class="img-responsive" alt="">
+
+`Is there a net change of bikes over the course of a day? If so, when and
+where should bikes be transported in order to make sure bikes match travel patterns?`
 
 ***
 ### 7. Route-passholder combos
 <img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
 
-`Talk about what combination would be more popular`
+`What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular?`
 ***
 # Overview of Solution
 ### App and Main Menu
