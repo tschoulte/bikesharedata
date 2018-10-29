@@ -10,7 +10,8 @@ Below is the documentation for my Python-coded bikeshare data analyzing script i
 
 
 
-## Overview of Solution: App and Main Menu
+## Overview of Solution
+### App and Main Menu
 The analysis program consists of the three following files:
 <br>
 <img src="Github Pages/Main Menu/1.jpg" class="img-responsive" alt="">
@@ -36,13 +37,13 @@ Throughout my script, I have implemented protections against edge-case scenarios
 <img src="Github Pages/Function 1/7.jpg" class="img-responsive" alt="">
 
 <img src="Github Pages/Function 2/1.jpg" class="img-responsive" alt="">
-<img src="Github Pages/Function 2/2.jpg" class="img-responsive" alt="">
+<img src="Github Pages/Function 2/2.jpg" class="img-responsive" alt="" width="250">
 
 <img src="Github Pages/Function 3/1.jpg" class="img-responsive" alt="">
-<img src="Github Pages/Function 3/2.jpg" class="img-responsive" alt="">
+<img src="Github Pages/Function 3/2.jpg" class="img-responsive" alt="" width="550">
 
 <img src="Github Pages/Function 4/1.jpg" class="img-responsive" alt="">
-<img src="Github Pages/Function 4/2.jpg" class="img-responsive" alt="">
+<img src="Github Pages/Function 4/2.jpg" class="img-responsive" alt="" width="600">
 
 <img src="Github Pages/Function 5/1.jpg" class="img-responsive" alt="">
 <img src="Github Pages/Function 5/2.jpg" class="img-responsive" alt="">
@@ -52,4 +53,4 @@ Throughout my script, I have implemented protections against edge-case scenarios
 <img src="Github Pages/Function 6/3.jpg" class="img-responsive" alt="">
 
 <img src="Github Pages/Function 7/1.jpg" class="img-responsive" alt="">
-<img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="">
+<img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
