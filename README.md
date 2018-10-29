@@ -50,7 +50,7 @@ Furthermore, due to the program's CSV write functionality, if a user requests da
 <img src="Github Pages/Function 1/7.jpg" class="img-responsive" alt="">
 Finally, after the file has or has not been opened, the program automatically returns to the main menu.
 
-**It is worth mentioning at this point in the introduction that the primary guards and functionality of the program has been described in this section. All further sections will share similar guards such as write protection, input-guards for strings, dates, and integers when prompted, and and the ability to open files after the data export is complete.**
+**It is worth mentioning at this point in the introduction that the primary guards and functionality of the program has been described in this section. All further sections will share similar guards such as write protection, input-guards for strings, dates, and integers when prompted, and the ability to open files after the data export is complete.**
 
 ### Function 2: Which stop stations are most popular?
 <img src="Github Pages/Function 2/1.jpg" class="img-responsive" alt="">
