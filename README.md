@@ -47,21 +47,23 @@ I considered only Monthly Pass holders and Staff Annual Pass holders to be 'regu
 Each of the four seasons have seven quantitative characteristics associated with it which can be graphed to display trending characteristics visually.
 <img src="Github Pages/Function 5/2.jpg" class="img-responsive" alt="">
 
-`How does ridership change with seasons? Types of passes used, trip duration, etc`
+`STILL MISSING: How does ridership change with seasons? Types of passes used, trip duration, etc`
 
 ***
 ### 6. Net change in bikes
 
-<img src="Github Pages/Function 6/3.jpg" class="img-responsive" alt="">
+<img src="Github Pages/Graphs/4.png" class="img-responsive" alt="">
 
-`Is there a net change of bikes over the course of a day? If so, when and
+<img src="Github Pages/Graphs/5.png" class="img-responsive" alt="">
+
+`STILL MISSING: Is there a net change of bikes over the course of a day? If so, when and
 where should bikes be transported in order to make sure bikes match travel patterns?`
 
 ***
 ### 7. Route-passholder combos
 <img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
 
-`What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular?`
+`STILL MISSING: What is the breakdown of Trip Route Category-Passholder type combinations? What might make a particular combination more popular?`
 
 ***
 # Overview of Solution
@@ -115,7 +117,7 @@ Finally, after the file has or has not been opened, the program automatically re
 
 ***
 ### Function 2
-**Most popular stop stations**
+`Most popular stop stations`
 <img src="Github Pages/Function 2/1.jpg" class="img-responsive" alt="">
 
 After running function 2, similar to most popular start locations, the program asks for the desired number of most popular stop locations, before saving them to a datasheet for viewing. Below is a copy of what is returned after requesting 10 most popular stop locations.
