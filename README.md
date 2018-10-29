@@ -24,7 +24,9 @@ Pictured above is a graph showing pass usage based on the season. I selected thi
 ***
 ### 2. Most popular stations
 Below are the top 10 stations for drop-off and pick-up:
+
 <img src="Github Pages/Function 2/2.jpg" class="img-responsive" alt="" width="250">
+
 <img src="Github Pages/Function 1/5.jpg" class="img-responsive" alt="" width="250">
 
 ***
@@ -32,6 +34,7 @@ Below are the top 10 stations for drop-off and pick-up:
 Below is the average distance computed for all one-way trips.
 
 Under Function 3, a deeper explanation is given of my distance calculating method, but this method calculates Euclidean distance between the origin and final destination stations. This means that round-trips and rows without specified stations ('blank rows') are excluded from this calculation, as this could lead to miscalculations based on various assumptions, such as bike speed and whether a bike is traveling the entire duration or not.
+
 <img src="Github Pages/Function 3/2.jpg" class="img-responsive" alt="" width="550">
 
 ***
