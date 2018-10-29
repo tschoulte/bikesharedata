@@ -52,9 +52,9 @@ Each of the four seasons have seven quantitative characteristics associated with
 ***
 ### 6. Net change in bikes
 
-<img src="Github Pages/Graphs/4.png" class="img-responsive" alt="">
+<img src="Github Pages/Graphs/4.png">
 
-<img src="Github Pages/Graphs/5.png" class="img-responsive" alt="">
+<img src="Github Pages/Graphs/5.png">
 
 `STILL MISSING: Is there a net change of bikes over the course of a day? If so, when and
 where should bikes be transported in order to make sure bikes match travel patterns?`
