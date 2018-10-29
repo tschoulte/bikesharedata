@@ -38,7 +38,7 @@ Under [Function 3](https://tschoulte.github.io/bikesharedata/#function-3), a dee
 
 ***
 ### 4. Regular bike commuters
-I considered only Monthly Pass holders and Staff Annual Pass holders to be 'regular' riders. Therefore, After summing the two quantities of rides deemded regular, 81,686 total rides were regular rides, accounting for 61.68% of all rides.
+I considered only Monthly Pass holders and Staff Annual Pass holders to be 'regular' riders. Therefore, After summing the two quantities of rides deemed as regular, 81,686 total rides were regular rides, accounting for 61.68% of all rides.
 
 <img src="Github Pages/Function 4/2.jpg" class="img-responsive" alt="" width="600">
 
@@ -58,7 +58,7 @@ Some key characteristics to note:
 ### 6. Net change in bikes
 Provided an input date, two graphs will be generated to inform the user of which station is in most need of having bikes removed, and which station is in most need of having bikes added. The function to determine priorities is further explained in [Function 6](https://tschoulte.github.io/bikesharedata/#function-6) below.
 
-Provided January 2nd, 2017 as an input date, it was determined that Station 3042 was most in need of bikes, and Station 3030 was most in need of bikes removed. Since the need for both stations have these needs around 3pm, in this example, bikes from 3030 could be moved to 3042 around 3pm.
+Provided January 2nd, 2017 as an input date, it was determined that Station 3042 was most in need of bikes, and Station 3030 was most in need of bikes removed. Since both stations have these needs around 3pm, in this example, bikes from 3030 could be moved to 3042 around 3pm.
 
 <img src="Github Pages/Graphs/4.png">
 <img src="Github Pages/Graphs/5.png">
@@ -67,7 +67,10 @@ Provided January 2nd, 2017 as an input date, it was determined that Station 3042
 ### 7. Route-passholder combos
 <img src="Github Pages/Function 7/2.jpg" class="img-responsive" alt="" width="600">
 
-A majority of trips are one-way trips. Of these one-way trips, a majority of them are from monthly pass holders. Analyzing round-trips, a majority of the round-trip users are walk-ups. Another notable trend would be that, given a group of flex-pass riders, a majority of them would most likely take a one-way ride.
+* A majority of trips are one-way trips.
+* Of these one-way trips, a majority of them are from monthly pass holders.
+* Analyzing round-trips, a majority of the round-trip users are walk-ups.
+* Provided a group of flex-pass riders, a majority of them would most likely take a one-way ride.
 
 ***
 # Overview of Solution
