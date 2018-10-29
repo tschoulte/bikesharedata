@@ -82,7 +82,7 @@ Throughout my script, I have implemented protections against edge-case scenarios
 
 ***
 ### Function 0
-`**Exit**`
+`Exit`
 <img src="Github Pages/Function 0/1.jpg" class="img-responsive" alt="">
 _The least exciting function to implement._ This function takes no input, simply closing the program.
 
@@ -124,7 +124,7 @@ After running function 2, similar to most popular start locations, the program a
 
 ***
 ### Function 3
-**Average distance traveled**
+`Average distance traveled`
 <img src="Github Pages/Function 3/1.jpg" class="img-responsive" alt="">
 
 After running function 3, the code asks which file the data should be written to, and stores a CSV file with the following data format depicted below. Average distance was calculated by excluding round trips and entries where the Lat and Long coordinates were left blank. Mathematically, the function computes the Euclidean distance between the one-way trips and averages these routes. This only resulted in 9% of the data set being ignored for average distance calculations, as I did not wish to assume bikers were biking the whole duration of a ride at a given speed and overestimate distance.
@@ -133,7 +133,7 @@ After running function 3, the code asks which file the data should be written to
 
 ***
 ### Function 4
-**Regular bike commuters**
+`Regular bike commuters`
 <img src="Github Pages/Function 4/1.jpg" class="img-responsive" alt="">
 
 After running function 4, the code asks which file the data should be written to, and stores an CSV file with the following data format depicted below. The code assumes that only monthly and annual pass rides are "regular" commutes, due to the provided defintions on the bikeshare data website for walk-up and flex-pass. This CSV file stores the raw quantity of monthly pass rides and annual pass rides, as well as the sum of ALL rides. It then uses this data to compute percentages to accompany the raw numerical data.
@@ -142,7 +142,7 @@ After running function 4, the code asks which file the data should be written to
 
 ***
 ### Function 5
-**Seasonal ridership trends**
+`Seasonal ridership trends`
 <img src="Github Pages/Function 5/1.jpg" class="img-responsive" alt="">
 
 After running function 5, the entries of the data set are split into 4 meterological seasons:
@@ -163,7 +163,7 @@ The data is then arranged and output in the following format based on season:
 
 ***
 ### Function 6
-**Net change in bikes**
+`Net change in bikes`
 <img src="Github Pages/Function 6/1.jpg" class="img-responsive" alt="">
 
 After running function 6, the user is prompted to enter a date, including day, month, and year. Similarly, this function has guards on both month and day entries, and if the date selected has no data entries, it informs the user as shown above, with a message stating there is not data for the avaialable date. It then returns to the main menu.
@@ -184,7 +184,7 @@ After the first graph is closed, the second graph is generated automatically, sh
 
 ***
 ### Function 7
-**Trip route category-passholder combos**
+`Trip route category-passholder combos`
 <img src="Github Pages/Function 7/1.jpg" class="img-responsive" alt="">
 
 After running function 7, the program asks for a desired filename, before saving them to a datasheet for viewing. The output CSV file sorts the data into Round Trip and One Way trip categories. Then, it sums then number of rides for each passholder which occured under each trip category. Below is a copy of what is returned for our dataset.
